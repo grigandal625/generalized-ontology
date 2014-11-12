@@ -1,0 +1,18 @@
+<div class="windowOutsideStyle" style="height: 300px; left: 50%; top: 40%; margin-left: -256px; margin-top: -156px;">
+	<div class="heading">Построение обобщенной онтологии</div>
+	<div class="windowInsideStyle" style="height: 275px;">
+		<h5>Список онтологий курсов/дисциплин:</h5>
+		<input type="text" class="textField">
+		<div class="list" style="height: 130px; cursor: pointer;">
+			<% @ontologies.each do |ontology| %>
+				<div class="listElement" id="<%= ontology.ontology_id %>"><%= ontology.ontology_name %></div>
+			<% end %>	
+		</div>
+		<div class="buttonsContainer">
+			<button>Выход</button>
+		</div>
+	</div>
+</div>
+
+<%= javascript_include_tag "index-click-handler" %>
+<%= javascript_include_tag "textfield-handler" %>

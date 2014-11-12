@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sign_id: 1
+  sign_name: MyString
+  sign_description: MyString
+
+two:
+  sign_id: 1
+  sign_name: MyString
+  sign_description: MyString

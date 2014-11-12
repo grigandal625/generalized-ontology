@@ -1,0 +1,19 @@
+<div class="windowOutsideStyle" style="height: 800px; width: 1500px; left: 50%; top: 40%; margin-left: -750px; margin-top: -325px;">
+	<div class="heading"><%= @ontology.ontology_name %></div>
+	<div class="windowInsideStyle" style="height: 775px;">
+		<canvas></canvas>
+		<h5>Список элементов онтологии:</h5>
+		<input type="text" class="textField">
+		<div class="list" style="height: 630px;">
+          <ul class="Container"></ul>
+		</div>
+
+		<div class="buttonsContainer">
+			<button>Выход</button>
+		</div>
+	</div>
+</div>
+
+<%= javascript_include_tag "textfield-handler" %>
+<%= javascript_include_tag "getonto" %>
+<%= javascript_include_tag "tree-script" %>

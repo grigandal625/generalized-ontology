@@ -1,0 +1,129 @@
+canvas {
+border: 1px solid;
+width: 1000px;
+height: 700px;
+//position:absolute;
+//left: 50%;
+margin-right: 25px;
+margin-top: 25px;
+background-color: white;
+float: right;
+}
+
+body {
+    font-family: verdana, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.windowOutsideStyle {
+    background: linear-gradient(to bottom, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+    border: thin solid #FFA500;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    width: 500px;
+    cursor: default;
+}
+
+
+.windowInsideStyle {
+    background: linear-gradient(135deg, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(240,239,244,1) 47%,rgba(219,220,226,1) 85%,rgba(245,246,246,1) 100%);
+    border-radius: 5px;
+    border: thin solid #9C9C9C;
+    text-align: center;
+}
+
+
+.heading {
+    height:25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.list {
+    text-align: left;
+    font-size: 10pt;
+    border: 1px solid;
+    margin: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 3px;
+    width: 425px;
+}
+
+
+.listElement:hover {
+    font-weight: bold;
+}
+
+
+.buttonsContainer {
+    position: absolute;
+    bottom: 17px; 
+    right: 17px;
+}
+
+
+button {
+    width: 100px;
+    margin-left: 5px;
+}
+
+
+#actionMenu{
+    position: absolute;
+    background: white;
+    font-size: 8pt;
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+    width: 150px;
+}
+
+
+.actionMenuOption{
+    padding: 5px;
+}
+
+
+.actionMenuOption:hover{
+    background: #B0C4DE;
+    color: white;
+}
+
+
+.background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+.selectedElement{
+    font-weight: bold;
+    background: url(<%= asset_data_uri 'sign.png' %>) no-repeat;
+    padding-left: 15px;
+}
+
+
+.textField {
+    width: 425px;
+}
+
+
+.searchOptions {
+    text-align: justify;
+    font-size: 10pt;
+    margin-left: 10px;
+    margin-right:20px;
+}
