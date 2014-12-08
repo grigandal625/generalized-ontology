@@ -3,17 +3,19 @@
 	<div class="windowInsideStyle" style="height: 775px;">
 		<canvas></canvas>
 		<h5>Список элементов онтологии:</h5>
-		<input type="text" class="textField">
+		<!-- В баню пока что строку поиска <input type="text" class="textField"> -->
 		<div class="list" style="height: 630px;">
           <ul class="Container"></ul>
 		</div>
-
+        <button id="CutBtn">Отсечь элементы</button>
+        <button id="UndoBtn">Отменить</button>
 		<div class="buttonsContainer">
 			<button>Выход</button>
 		</div>
 	</div>
 </div>
 
-<%= javascript_include_tag "textfield-handler" %>
+<!-- <%= javascript_include_tag "search-field-handler" %> -->
 <%= javascript_include_tag "getonto" %>
 <%= javascript_include_tag "tree-script" %>
+<%= javascript_include_tag "operations" %>

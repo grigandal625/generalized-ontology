@@ -23,58 +23,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/ontologies/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="391">
-              <folding>
-                <element signature="e#32#116#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getonto.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getonto.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="107" selection-start="9723" selection-end="9723" vertical-scroll-proportion="0.0" vertical-offset="4337" max-vertical-offset="5253">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ontologies_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="19" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2142">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="41" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1292">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assets.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="66" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ontologies/test.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
-              <folding />
+              <folding>
+                <marker date="1415207324000" expanded="true" signature="21:27" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,7 +37,7 @@
       <file leaf-file-name="tree-test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tree-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2142">
+            <state line="4" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2142">
               <folding />
             </state>
           </provider>
@@ -91,7 +46,7 @@
       <file leaf-file-name="tree-script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tree-script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="30" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
+            <state line="6" column="30" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="2142">
               <folding />
             </state>
           </provider>
@@ -101,15 +56,102 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="50" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-2.4230769" vertical-offset="787" max-vertical-offset="2278">
+              <folding>
+                <marker date="1417517250000" expanded="true" signature="7:170" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="177:390" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="413:647" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="669:914" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="926:991" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1000:1196" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1218:1244" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1265:1328" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1338:1381" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1395:1535" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1555:1576" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1602:1648" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1663:1797" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1816:1931" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1945:1966" placeholder="{...}" />
+                <marker date="1417517250000" expanded="true" signature="1984:2079" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tree.css.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="-3.0769231" vertical-offset="447" max-vertical-offset="1581">
+              <folding>
+                <marker date="1415214842000" expanded="true" signature="12:46" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="62:92" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="150:322" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="332:355" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="412:517" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="539:615" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="681:756" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="801:876" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="887:934" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1018:1073" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1093:1223" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1250:1273" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1300:1322" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1367:1391" placeholder="{...}" />
+                <marker date="1415214842000" expanded="true" signature="1412:1433" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1090" column="43" selection-start="41176" selection-end="41176" vertical-scroll-proportion="-10.461538" vertical-offset="18258" max-vertical-offset="21131">
+              <folding>
+                <marker date="1418047944000" expanded="true" signature="21159:21733" placeholder="..." />
+                <marker date="1418047944000" expanded="true" signature="21411:21672" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="37" selection-start="567" selection-end="567" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="442">
+              <folding>
+                <element signature="e#32#131#0" expanded="true" />
+                <element signature="e#224#246#0" expanded="true" />
+                <element signature="e#406#428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operations.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/operations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="55" selection-start="1599" selection-end="1636" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3196">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tree.css.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
+      <file leaf-file-name="unite-ontologies.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/unite-ontologies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="71" selection-start="754" selection-end="754" vertical-scroll-proportion="0.22037652" vertical-offset="447" max-vertical-offset="1581">
+            <state line="36" column="0" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.6221744" vertical-offset="0" max-vertical-offset="929">
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getonto.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getonto.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="22" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="4677" max-vertical-offset="5593">
               <folding />
             </state>
           </provider>
@@ -151,19 +193,22 @@
         <option value="$PROJECT_DIR$/db/migrate/20140701175408_fill_ontologies.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140701184851_fill_signs.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140701185132_fill_signs_to_elements.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/script.js" />
         <option value="$PROJECT_DIR$/app/controllers/ontologies_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/test.js" />
         <option value="$PROJECT_DIR$/app/views/ontologies/test.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/tree-test.js" />
-        <option value="$PROJECT_DIR$/app/views/ontologies/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/ontologies/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/tree-script.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/getonto.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/script.js" />
+        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
+        <option value="$PROJECT_DIR$/app/views/ontologies/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/operations.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/unite-ontologies.js" />
       </list>
     </option>
   </component>
@@ -199,8 +244,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -215,7 +258,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="uir" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -225,39 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="uir" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="initializers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uir" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -279,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="uir" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -297,7 +308,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="uir" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -311,25 +322,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="uir" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -340,10 +333,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -351,7 +340,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="uir" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -367,26 +356,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uir" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -545,17 +518,37 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25239617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2550586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -566,8 +559,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -586,9 +579,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -608,10 +601,119 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/views/ontologies/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getonto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="289" column="13" selection-start="9886" selection-end="9886" vertical-scroll-proportion="0.0" vertical-offset="4913" max-vertical-offset="5593">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="19" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="41" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="66" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ontologies/test.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="153">
+          <folding>
+            <marker date="1415207324000" expanded="true" signature="21:27" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tree-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tree-script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="2142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="2278">
+          <folding>
+            <marker date="1417517250000" expanded="true" signature="7:170" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="177:390" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="413:647" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="669:914" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="926:991" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1000:1196" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1218:1244" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1265:1328" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1338:1381" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1395:1535" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1555:1576" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1602:1648" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1663:1797" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1816:1931" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1945:1966" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1984:2079" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="71" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1581">
+          <folding>
+            <marker date="1415214842000" expanded="true" signature="12:46" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="62:92" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="150:322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="332:355" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="412:517" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="539:615" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="681:756" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="801:876" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="887:934" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1018:1073" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1093:1223" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1250:1273" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1300:1322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1367:1391" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1412:1433" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
+          <folding>
+            <element signature="e#32#131#0" expanded="true" />
+            <element signature="e#224#246#0" expanded="true" />
+            <element signature="e#406#428#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -646,7 +748,9 @@
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/test.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="22" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="153">
-          <folding />
+          <folding>
+            <marker date="1415207324000" expanded="true" signature="21:27" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -667,21 +771,58 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="4" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.0" vertical-offset="1375" max-vertical-offset="2278">
-          <folding />
+          <folding>
+            <marker date="1417517250000" expanded="true" signature="7:170" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="177:390" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="413:647" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="669:914" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="926:991" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1000:1196" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1218:1244" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1265:1328" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1338:1381" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1395:1535" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1555:1576" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1602:1648" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1663:1797" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1816:1931" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1945:1966" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1984:2079" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="1" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0" vertical-offset="470" max-vertical-offset="1547">
-          <folding />
+          <folding>
+            <marker date="1415214842000" expanded="true" signature="12:46" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="62:92" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="150:322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="332:355" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="412:517" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="539:615" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="681:756" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="801:876" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="887:934" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1018:1073" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1093:1223" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1250:1273" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1300:1322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1367:1391" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1412:1433" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="45" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
+          <folding>
+            <element signature="e#32#131#0" expanded="true" />
+            <element signature="e#224#246#0" expanded="true" />
+            <element signature="e#406#428#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,7 +836,11 @@
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
+          <folding>
+            <element signature="e#32#131#0" expanded="true" />
+            <element signature="e#224#246#0" expanded="true" />
+            <element signature="e#406#428#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -718,31 +863,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index-click-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="929">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.16943522" vertical-offset="0" max-vertical-offset="903">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getonto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="107" selection-start="9723" selection-end="9723" vertical-scroll-proportion="0.0" vertical-offset="4337" max-vertical-offset="5253">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="929" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="929">
-          <folding>
-            <element signature="e#32#116#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -760,16 +887,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="66" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/ontologies/test.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
+        <state line="11" column="2" selection-start="579" selection-end="579" vertical-scroll-proportion="0.20129171" vertical-offset="0" max-vertical-offset="929">
           <folding />
         </state>
       </provider>
@@ -781,6 +901,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ontologies/test.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="153">
+          <folding>
+            <marker date="1415207324000" expanded="true" signature="21:27" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="518" selection-end="518" vertical-scroll-proportion="-3.0769231" vertical-offset="447" max-vertical-offset="1581">
+          <folding>
+            <marker date="1415214842000" expanded="true" signature="12:46" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="62:92" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="150:322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="332:355" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="412:517" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="539:615" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="681:756" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="801:876" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="887:934" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1018:1073" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1093:1223" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1250:1273" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1300:1322" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1367:1391" placeholder="{...}" />
+            <marker date="1415214842000" expanded="true" signature="1412:1433" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-2.4230769" vertical-offset="787" max-vertical-offset="2278">
+          <folding>
+            <marker date="1417517250000" expanded="true" signature="7:170" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="177:390" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="413:647" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="669:914" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="926:991" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1000:1196" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1218:1244" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1265:1328" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1338:1381" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1395:1535" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1555:1576" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1602:1648" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1663:1797" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1816:1931" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1945:1966" placeholder="{...}" />
+            <marker date="1417517250000" expanded="true" signature="1984:2079" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tree-script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="30" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
@@ -788,17 +964,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/main.css.erb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="21" selection-start="1023" selection-end="1023" vertical-scroll-proportion="-2.4230769" vertical-offset="787" max-vertical-offset="2278">
+        <state line="6" column="65" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="71" selection-start="754" selection-end="754" vertical-scroll-proportion="0.22037652" vertical-offset="447" max-vertical-offset="1581">
+        <state line="1090" column="43" selection-start="41176" selection-end="41176" vertical-scroll-proportion="-10.461538" vertical-offset="18258" max-vertical-offset="21131">
+          <folding>
+            <marker date="1418047944000" expanded="true" signature="21159:21733" placeholder="..." />
+            <marker date="1418047944000" expanded="true" signature="21411:21672" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="37" selection-start="567" selection-end="567" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="442">
+          <folding>
+            <element signature="e#32#131#0" expanded="true" />
+            <element signature="e#224#246#0" expanded="true" />
+            <element signature="e#406#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getonto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="22" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0" vertical-offset="4677" max-vertical-offset="5593">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/operations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="55" selection-start="1599" selection-end="1636" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3196">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/unite-ontologies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.6221744" vertical-offset="0" max-vertical-offset="929">
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

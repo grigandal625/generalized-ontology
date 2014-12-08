@@ -8,7 +8,7 @@ window.onload = function getOnto() {
             if (ajax.status == 200) {
                 ontology = eval('(' + ajax.responseText + ')');
                 paintTree();    //Порядок важен.
-                paintOnto();    //В этом скрипте задается обработчик кликов по элементам, создаваемым функцией painTree скрипта tree-script.js. По-хорошему скрипты нужно объединить, чтобы инкапсулировать весь функционал.
+                paintOnto();    //В этом скрипте задается обработчик кликов по элементам, создаваемым функцией paintTree скрипта tree-script.js. По-хорошему скрипты нужно объединить, чтобы инкапсулировать весь функционал.
             }
             else {
                 alert('Ошибка: запрос не был выполнен. Попробуйте перезагрузить страницу');
@@ -73,7 +73,7 @@ function paintOnto() {
 					//ctx.stroke();
 					ctx.font = "bold 11px Arial";
 					ctx.textAlign = "center";
-					ctx.fillStyle = "#888888";
+					node.data.isSelected ? ctx.fillStyle = "#FF0000" : ctx.fillStyle = "#888888"; //Экспериментирую !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 					ctx.fillText(node.name, pt.x, pt.y + 4);
 				})    			
 			},
@@ -127,7 +127,7 @@ function paintOnto() {
 						return false;
 					},*/
 		  
-					clicked:function(e){
+					clicked:function(e){	//По идее в каждый условный блок можно впилить return, а обработчики drag-n-drop'а лепить уже после них.
 						var pos = $(canvas).offset();
 						_mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
 						dragged = particleSystem.nearest(_mouseP);
@@ -138,6 +138,21 @@ function paintOnto() {
 
 						$(canvas).bind('mousemove', handler.dragged)
 						$(window).bind('mouseup', handler.dropped)
+						
+						//Если при клике по элементу нажат Shift - выделяем его
+						if (e.shiftKey) {
+							dragged.node.data.isSelected = !(dragged.node.data.isSelected);
+						}
+						
+						//Если при клике по элементу нажат Ctrl - отобразить связи
+						if (e.ctrlKey) {
+							dragged.node.data.areLinksShown ? hideLinks(dragged.node.name) : showLinks(dragged.node.name);	
+							dragged.node.data.areLinksShown = !(dragged.node.data.areLinksShown);
+						}
+						
+						if (e.altKey) {
+							//Показать информацию об элементе 
+						}
 
 						return false
 					},
@@ -275,7 +290,7 @@ function paintOnto() {
 			}
 		}
 
-		if (document.getElementsByClassName('selectedElement').length == 0){
+		if (document.getElementsByClassName('selectedElement').length == 0){	//Пофиксить под новые обработчики кликов
 			sys.parameters({stiffness: 600}); //Если нет выделенных для отображения связей элементов, натянем граф
 		}
 	}
@@ -291,9 +306,14 @@ function paintOnto() {
 		}
 	}
 
-     for (var i = 0; i < ontology.structure.length; i++) {
-     sys.addEdge('' + ontology.structure[i].parent_element, '' + ontology.structure[i].element_id);
-     }
+    for (var i = 0; i < ontology.structure.length; i++) {
+		sys.addEdge('' + ontology.structure[i].parent_element, '' + ontology.structure[i].element_id);
+    }
+	
+	sys.eachNode(function(node, pt){
+		node.data.isSelected = false;
+		node.data.areLinksShown = false;
+	});
 
 
 	var listElems = document.getElementsByClassName('listElement');

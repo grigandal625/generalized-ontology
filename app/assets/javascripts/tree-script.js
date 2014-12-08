@@ -44,7 +44,8 @@ function paintTree() {
 
         child.root = false;
         parent.leaf = false;
-
+		
+		//Если у узла-родителя есть потомок, то убираем у него флаг "последний"
         if(node = parent.container.lastChild){
             node.last = false;
         }
@@ -91,7 +92,8 @@ function expandNode(){
     node.className = node.className.replace(re, '$1'+newClass+'$3')
 }
 
-function tree_toggle(event) {
+//Функция из примера
+/*function tree_toggle(event) {
     event = event || window.event
     var clickedElem = event.target || event.srcElement
 
@@ -111,7 +113,7 @@ function tree_toggle(event) {
     // регексп находит отдельно стоящий open|close и меняет на newClass
     var re =  /(^|\s)(ExpandOpen|ExpandClosed)(\s|$)/
     node.className = node.className.replace(re, '$1'+newClass+'$3')
-}
+}*/
 
 
 function hasClass(elem, className) {

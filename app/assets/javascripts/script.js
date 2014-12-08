@@ -10,7 +10,7 @@ var resultWindowBackground;
 var ontoID;
 var CombineOntoID;
 var ontology;
-var resultOntology;
+var ontology;
 
 
 
@@ -947,7 +947,7 @@ function cutElements() {    //Удостовериться в корректно
 	flatten(resultOntology.links);
 	flatten(resultOntology.competences);
 	flatten(resultOntology.signs);
-	
+
 	if (resultOntology.elements.length > 0) {
 		//Добавить проверку на связность    *Онтологии пока не построены до конца, имеет ли смысл?
 		return true;
@@ -965,8 +965,8 @@ function deleteElement(id) {
 		}
 	}
 	if (i == resultOntology.elements.length) {return} //В случае, если элемент не был найден, продолжать выполнение функции бессмысленно
-	
-	
+
+
 	for (var i = 0; i < resultOntology.structure.length; i++) {
 		/*if (ontology.structure[i].parent_element == id) {
 			deleteElement(ontology.structure[i].element_id);
@@ -976,29 +976,29 @@ function deleteElement(id) {
 			break; //Можно добавить break, потому что в иерархической структуре каждый элемент встречается единожды
 		}
 	}
-	
-	
+
+
 	for (var i = 0; i < resultOntology.links.length; i++) {
 		if (resultOntology.links[i] != null && (resultOntology.links[i].element_id == id || resultOntology.links[i].linked_element_id == id)) {
 			resultOntology.links[i] = null;
 		}
 	}
-	
-	
+
+
 	for (var i = 0; i < resultOntology.competences.length; i++) {
 		if (resultOntology.competences[i] != null && resultOntology.competences[i].element_id == id) {
 			resultOntology.competences[i] = null;
 		}
 	}
-	
-	
+
+
 	for (var i = 0; i < resultOntology.signs.length; i++) {
 		if (resultOntology.signs[i] != null && resultOntology.signs[i].element_id == id) {
 			resultOntology.signs[i] = null;
 		}
 	}
-	
-	
+
+
 	//Ищем, есть ли потомки у данного элемента
 	for (var i = 0; i < resultOntology.structure.length; i++) {
 		if (resultOntology.structure[i] != null && resultOntology.structure[i].parent_element == id) { //Косяк!!!! Массив в процессе рекурсивного вызова сплющивается (вроде исправил)
