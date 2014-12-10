@@ -30,12 +30,12 @@ function paintOnto() {
 
 		var that = {
 			init:function(system){
-				particleSystem = system
+				particleSystem = system;
 
 				particleSystem.screenSize(canvas.offsetWidth, canvas.offsetHeight); 
 				particleSystem.screenPadding(80);
 
-				that.initMouseHandling()
+				that.initMouseHandling();
 			},
       
 			redraw:function(){
@@ -43,6 +43,7 @@ function paintOnto() {
 				ctx.fillRect(0,0, canvas.offsetWidth, canvas.offsetHeight)
         
 				particleSystem.eachEdge(function(edge, pt1, pt2){
+                    //Узнать бы еще, каким кодом какой тип обозначается
 					switch (edge.data.type) {
 						case undefined:
 							ctx.strokeStyle = "black";
@@ -73,7 +74,8 @@ function paintOnto() {
 					//ctx.stroke();
 					ctx.font = "bold 11px Arial";
 					ctx.textAlign = "center";
-					node.data.isSelected ? ctx.fillStyle = "#FF0000" : ctx.fillStyle = "#888888"; //Экспериментирую !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    //Выделенные элементы пишем красным, остальные - черным
+					node.data.isSelected ? ctx.fillStyle = "#FF0000" : ctx.fillStyle = "#888888";
 					ctx.fillText(node.name, pt.x, pt.y + 4);
 				})    			
 			},

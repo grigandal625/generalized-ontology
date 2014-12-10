@@ -26,7 +26,7 @@ for (var i = 0; i < ontologiesToUniteIDs.length){
 }
 
 function UniteWithOntologies (ontologiesArr) {
-    tmpOntology = JSON.parse(JSON.stringify(ontology));
+    ontologyBackupStack = JSON.parse(JSON.stringify(ontology));
     for (var i = 0; i < ontologiesArr.length; i++){
         //По идее по порядку может не получиться операция. Нужен циклический обход
         uniteOntologies(ontology, ontologiesArr[i]);
