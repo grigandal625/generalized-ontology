@@ -108,7 +108,7 @@ function CutElements(ontology, elementsToCut) {
     }
 
     //Типа сплющиваем все массивы
-    for (keys in ontology) {
+    for (var keys in ontology) {
         flatten(ontology[keys]);
     }
 
@@ -310,8 +310,12 @@ ExcerptBtn.onclick = function() {
 function ExcerptElements(ontology, elementsToExcerpt) {
     var result = {};
 
+    //Инициализируем все части новой онтологии
+    for (var keys in ontology) {
+        result[keys] = [];
+    }
+
     //Добавляем все элементы из исходной онтологии
-    result.elements = [];
     for (var i = 0; i < ontology.elements.length; i++) {
         //Если элемент есть среди тех, которые выбраны - добавляем его
         if (elementsToExcerpt.indexOf(ontology.elements[i].element_id) >= 0) {
@@ -323,7 +327,6 @@ function ExcerptElements(ontology, elementsToExcerpt) {
 
 
     //Добавляем все иерархические связи
-    result.structure = [];
     for (var i = 0; i < ontology.structure.length; i++) {
         if (elementsToExcerpt.indexOf(ontology.structure[i].element_id) >= 0 && elementsToExcerpt.indexOf(ontology.structure[i].parent_element) >= 0) {
             result.structure.push(JSON.parse(JSON.stringify(ontology.structure[i])));
@@ -331,7 +334,6 @@ function ExcerptElements(ontology, elementsToExcerpt) {
     }
 
     //Добавляем все связи
-    result.links = [];
     for (var i = 0; i < ontology.links.length; i++) {
         if (elementsToExcerpt.indexOf(ontology.links[i].element_id) >= 0 && elementsToExcerpt.indexOf(ontology.links[i].linked_element_id) >= 0) {
             result.links.push(JSON.parse(JSON.stringify(ontology.links[i])));
@@ -340,7 +342,6 @@ function ExcerptElements(ontology, elementsToExcerpt) {
 
 
     //Добавляем все компетенции
-    result.competences = [];
     for (var i = 0; i < ontology.competences.length; i++) {
         if (elementsToExcerpt.indexOf(ontology.competences[i].element_id) >= 0) {
             result.competences.push(JSON.parse(JSON.stringify(ontology.competences[i])));
@@ -349,7 +350,6 @@ function ExcerptElements(ontology, elementsToExcerpt) {
 
 
     //Добавляем все признаки
-    result.signs = [];
     for (var i = 0; i < ontology.signs.length; i++) {
         if (elementsToExcerpt.indexOf(ontology.signs[i].element_id) >= 0) {
             result.signs.push(JSON.parse(JSON.stringify(ontology.signs[i])));
@@ -376,9 +376,9 @@ function ExcerptElements(ontology, elementsToExcerpt) {
 
 
 
-var SearchBtn = document.getElementById("SearchBtn");
+var LocateBtn = document.getElementById("LocateBtn");
 
-SearchBtn.onclick = function() {
+LocateBtn.onclick = function() {
     //Находим выделенные элементы
     var selectedElems = getSelectedElements();
 
@@ -439,7 +439,7 @@ function LocateElement(ontology, id, bfsFlag, dfsFlag) {
     elementsToAdd.push(id);
 
     //Инициализируем все части новой онтологии
-    for (keys in ontology) {
+    for (var keys in ontology) {
         result[keys] = [];
     }
 
@@ -521,3 +521,245 @@ function LocateElement(ontology, id, bfsFlag, dfsFlag) {
     return result;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+var UniteBtn = document.getElementById("UniteBtn");
+
+UniteBtn.onclick = function() {
+    //Запрашиваем онтологии, с которыми необходимо объединить данную
+    //Пока что заглушка, по-хорошему нужно свое диалоговое окно сбацать
+    var idList = prompt("Введите через запятую id онтологий:");
+
+    //Для заглушки сделаю только обработчик отмены запроса
+    if (idList == null) {
+        //В этом случае прекращаем выполнение
+        return
+    } else {
+        //Иначе сплитаем строку по запятой
+        idList = idList.split(',');
+    }
+
+
+    //Инициализируем массив онтологий, которые будут объединены
+    var ontologiesArr = [];
+    //Сразу добавим туда текущую
+    ontologiesArr.push(JSON.parse(JSON.stringify(ontology)));
+
+    //Загружаем запрошенные онтологии:
+
+    //Создадим транспорт и напишем обработчик ответа от сервера
+    var ajax = getXmlHttp();
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                //Если запрос успешен, добавляем в массив пришедшую онтологию
+                ontologiesArr.push(eval('(' + ajax.responseText + ')'));
+
+                //Если пришли все онтологии (т.к. с каждым шагом мы удаляем один элемент из массива idList, процесс закончится, когда его длин станет равна нулю)
+                //По идее ниженаписанный блок кода можно выделить в отдельную функцию
+                if (idList.length == 0) {
+                    //Бэкапим онтологию
+                    ontologyBackupStack.push(JSON.parse(JSON.stringify(ontology)));
+
+                    //Вызываем метод
+                    ontology = MultipleUnion(ontologiesArr);
+
+
+                    //Если метод вернул ошибку
+                    if (ontology == undefined) {
+                        //Делаем откат
+                        ontology = ontologyBackupStack.pop();
+
+                        //Вызываем сообщение об ошибке
+                        alert("Операция не может быть выполнена");
+                    } else {
+                        //Если же все прошло удачно
+                        //Корректируем изображение графа
+                        CorrectParticleSystemContent();
+
+                        //Корректируем параметры системы частиц, отвечающие за физику графа
+                        setTimeout("CorrectParticleSystemParameters()", 75);
+                    }
+                //Если пришли не все онтологии,
+                } else {
+                    //запросим следующую
+                    ajax.open('GET', '/ontologies/' + idList.shift() + '/get', true);
+                    ajax.send(null);
+                }
+            }
+            else {
+                alert('Ошибка: запрос не был выполнен. Попробуйте перезагрузить страницу');
+            }
+        }
+    }
+
+    //Делаем первый запрос (далее процесс идет по цепочке)
+    ajax.open('GET', '/ontologies/' + idList.shift() + '/get', true);
+    ajax.send(null);
+    //P.S. Может, заменить все это одним запросом? (См. соотв. issue на GitHub'е)
+}
+
+
+
+
+//Функция, реализующая объединение нескольких онтологий (на входе массив)
+function MultipleUnion(ontologiesArr) {
+    var result;
+
+    //Если на ход поступило меньше двух онтологий, возвращаем ошибку
+    if (ontologiesArr.length < 2) {
+        return undefined;
+    }
+
+    //Вообще говоря, не каждая пара онтологий может быть объединена,
+    //но т.к. мы заранее знаем, что хотя бы один общий элемент есть в каждой онтологии (корень - название специализации),
+    //то пока что выполнение будет значительно упрощено за счет того, что выщеописанная особенность пропускается
+
+    //Скопируем в текущий результат первую онтологию из списка
+    result = JSON.parse(JSON.stringify(ontologiesArr[0]));
+
+    //Т.о. итерации начинаем уже со второго элемента массива
+    for (var i = 1; i < ontologiesArr.length; i++) {
+        //Объединяем текущий результат со следующей онтологией
+        result = BinaryUnion(result, ontologiesArr[i]);
+
+        //Сделаем для приличия такую заглушку:
+        //если на каком либо шаге пришла ошибка
+        if (result == undefined) {
+            //возвращаем фигу
+            return undefined;
+        }
+    }
+
+    //Возвращаем результат
+    return result;
+}
+
+
+
+//Функция, реализующая объединение двух онтологий
+function BinaryUnion(ontology1, ontology2) {
+    var result = {};
+
+    //Инициализируем все структуры для новой онтологии
+    for (var keys in ontology1) {
+        result[keys] = [];
+    }
+
+    //Далее производим слияние соответствующих массивов.
+    //--- !!!ВНИМАНИЕ!!! Предполагается, что массивы упорядочены (по element_id) !!!ВНИМАНИЕ!!! ---
+
+    var i = 0; var j = 0;
+    //Условия выглядят очень убого из-за длинных названий, но ничего не поделаешь
+    //Пока оба массива не закончились
+    while ((i != ontology1.elements.length) || (j != ontology2.elements.length)) {
+        //ЕСЛИ (первый массив не закончился) И ((второй массив закончился) ИЛИ (текущий элемент первого массива меньше текущего элемента второго)
+        if ((i != ontology1.elements.length) && ((j == ontology2.elements.length) || (ontology1.elements[i].element_id < ontology2.elements[j].element_id))) {
+            //берем элемент из первого массива
+            result.elements.push(JSON.parse(JSON.stringify(ontology1.elements[i])));
+            i++;
+        //ИНАЧЕ ЕСЛИ (второй массив не закончился) И ((первый массив закончился) ИЛИ (текущий элемент первого массива больше текущего элемента второго)
+        } else if ((j != ontology2.elements.length) && ((i == ontology1.elements.length) || (ontology1.elements[i].element_id > ontology2.elements[j].element_id))) {
+            //берем элемент из второго массива
+            result.elements.push(JSON.parse(JSON.stringify(ontology2.elements[j])));
+            j++;
+        //ИНАЧЕ (значит текущие элементы в обоих массивах равны)
+        } else {
+            //берем элемент из любого массива (например, из первого) и пропускаем элемент в другом
+            result.elements.push(JSON.parse(JSON.stringify(ontology1.elements[i])));
+            i++; j++;
+        }
+    }
+
+    //Если количество элементов в новой онтологии равно сумме элементов исходных, значит их пересечение пустое, т.е. объединение невозможно
+    if (result.elements.length == (ontology1.elements.length + ontology2.elements.length)) {
+        //В таком случае возвращаем ошибку
+        return undefined;
+    }
+
+    i = 0; j = 0;
+    //Далее чуть сложнее, т.к. сравниваем уже пары элементов
+    //Пока оба массива не закончились
+    while ((i != ontology1.structure.length) || (j != ontology2.structure.length)) {
+        //ЕСЛИ (первый массив не закончился) И ((второй массив закончился) ИЛИ ((первый элемент пары из первого массива меньше первого элемента пары из второго) ИЛИ ((первые элементы в парах обоих массивов равны) И (второй элемент пары первого массива меньше второго элемента пары второго массива))))
+        if ((i != ontology1.structure.length) && ((j == ontology2.structure.length) || ((ontology1.structure[i].element_id < ontology2.structure[j].element_id) || ((ontology1.structure[i].element_id = ontology2.structure[j].element_id) && (ontology1.structure[i].parent_element < ontology2.structure[j].parent_element))))) {
+            //берем пару из первого массива
+            result.structure.push(JSON.parse(JSON.stringify(ontology1.structure[i])));
+            i++;
+        //ИНАЧЕ ЕСЛИ (второй массив не закончился) И ((первый массив закончился) ИЛИ ((первый элемент пары из первого массива больше первого элемента пары из второго) ИЛИ ((первые элементы в парах обоих массивов равны) И (второй элемент пары первого массива больше второго элемента пары второго массива))))
+        } else if ((j != ontology2.structure.length) && ((i == ontology1.structure.length) || ((ontology1.structure[i].element_id > ontology2.structure[j].element_id) || ((ontology1.structure[i].element_id = ontology2.structure[j].element_id) && (ontology1.structure[i].parent_element > ontology2.structure[j].parent_element))))) {
+            //берем пару из второго массива
+            result.structure.push(JSON.parse(JSON.stringify(ontology2.structure[j])));
+            j++;
+        //ИНАЧЕ (значит текущие пары в обоих массивах одинаковы)
+        } else {
+            //берем пару из любого массива (например, из первого) и пропускаем пару в другом
+            result.structure.push(JSON.parse(JSON.stringify(ontology1.structure[i])));
+            i++; j++;
+        }
+    }
+
+    //Аналогичным образом сливаем оставшиеся массивы:
+
+    //Связи:
+    i = 0; j = 0;
+    while ((i != ontology1.links.length) || (j != ontology2.links.length)) {
+        if ((i != ontology1.links.length) && ((j == ontology2.links.length) || ((ontology1.links[i].element_id < ontology2.links[j].element_id) || ((ontology1.links[i].element_id = ontology2.links[j].element_id) && (ontology1.links[i].linked_element_id < ontology2.links[j].linked_element_id))))) {
+            result.links.push(JSON.parse(JSON.stringify(ontology1.links[i])));
+            i++;
+        } else if ((j != ontology2.links.length) && ((i == ontology1.links.length) || ((ontology1.links[i].element_id > ontology2.links[j].element_id) || ((ontology1.links[i].element_id = ontology2.links[j].element_id) && (ontology1.links[i].linked_element_id > ontology2.links[j].linked_element_id))))) {
+            result.links.push(JSON.parse(JSON.stringify(ontology2.links[j])));
+            j++;
+        } else {
+            //Если была найдена связь между двумя одинаковыми элементами в онтологиях, преобразуем ее:
+            var tmpLink = JSON.parse(JSON.stringify(ontology1.links[i]));
+            //Т.к. атрибут link_type принимает только значения [0, 1, 2], преобразование можно выполнить следующей простой формулой
+            //Замечание: считается, что 0 - слабая связь, 2 - сильная связь
+            tmpLink.link_type = Math.floor((ontology1.links[i].link_type + ontology2.links[j].link_type) / 2);
+            result.links.push(tmpLink);
+            i++; j++;
+        }
+    }
+
+    //Компетенции:
+    i = 0; j = 0;
+    while ((i != ontology1.competences.length) || (j != ontology2.competences.length)) {
+        if ((i != ontology1.competences.length) && ((j == ontology2.competences.length) || ((ontology1.competences[i].element_id < ontology2.competences[j].element_id) || ((ontology1.competences[i].element_id = ontology2.competences[j].element_id) && (ontology1.competences[i].competence_id < ontology2.competences[j].competence_id))))) {
+            result.competences.push(JSON.parse(JSON.stringify(ontology1.competences[i])));
+            i++;
+        } else if ((j != ontology2.competences.length) && ((i == ontology1.competences.length) || ((ontology1.competences[i].element_id > ontology2.competences[j].element_id) || ((ontology1.competences[i].element_id = ontology2.competences[j].element_id) && (ontology1.competences[i].competence_id > ontology2.competences[j].competence_id))))) {
+            result.competences.push(JSON.parse(JSON.stringify(ontology2.competences[j])));
+            j++;
+        } else {
+            result.competences.push(JSON.parse(JSON.stringify(ontology1.competences[i])));
+            i++; j++;
+        }
+    }
+
+    //Признаки:
+    i = 0; j = 0;
+    while ((i != ontology1.signs.length) || (j != ontology2.signs.length)) {
+        if ((i != ontology1.signs.length) && ((j == ontology2.signs.length) || ((ontology1.signs[i].element_id < ontology2.signs[j].element_id) || ((ontology1.signs[i].element_id = ontology2.signs[j].element_id) && (ontology1.signs[i].competence_id < ontology2.signs[j].competence_id))))) {
+            result.signs.push(JSON.parse(JSON.stringify(ontology1.signs[i])));
+            i++;
+        } else if ((j != ontology2.signs.length) && ((i == ontology1.signs.length) || ((ontology1.signs[i].element_id > ontology2.signs[j].element_id) || ((ontology1.signs[i].element_id = ontology2.signs[j].element_id) && (ontology1.signs[i].competence_id > ontology2.signs[j].competence_id))))) {
+            result.signs.push(JSON.parse(JSON.stringify(ontology2.signs[j])));
+            j++;
+        } else {
+            result.signs.push(JSON.parse(JSON.stringify(ontology1.signs[i])));
+            i++; j++;
+        }
+    }
+
+    //Возвращаем результат
+    return result;
+}
