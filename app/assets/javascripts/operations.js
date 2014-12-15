@@ -763,3 +763,74 @@ function BinaryUnion(ontology1, ontology2) {
     //Возвращаем результат
     return result;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//Сохранение онтологии
+
+var SaveBtn = document.getElementById("SaveBtn");
+
+SaveBtn.onclick = function() {
+    var ans;
+
+    //Запрашиваем название для новой онтологии
+    //Пока пользователь не введет название
+    while (!(ans = prompt('Введите название обобщенной онтологии', 'NewOntology'))) {
+        //Если пользователь нажал "Отмена",
+        if (ans == null) {
+            //прекращаем выполнение
+            return;
+        //Иначе (т.е. была введена пустая строка)
+        } else {
+            //выводим соотв. сообщение
+            alert('Вы не ввели название.');
+        }
+    }
+
+    //В том случае, если было корректно введено название
+    //Копируем текущую онтологию (вообще говоря, это как-то фигово, но мне нужно впилить туда еще одно св-во с имененм)
+    var newOntology = JSON.parse(JSON.stringify(ontology));
+    //Добавляем имя
+    newOntology.name = ans;
+
+    //Отправляем запрос на сервер
+    var ajax = getXmlHttp();
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                //Если все оки - выводим сообщение
+                alert(ajax.responseText);
+                alert('Онтология ' + ans + ' успешно сохранена');
+            }
+            else {
+                //иначе выводим ошибку
+                alert('Ошибка: онтология не была сохранена. Попробуйте еще раз');
+            }
+        }
+    }
+
+    ajax.open('POST', '/ontologies', true);
+    ajax.setRequestHeader('Content-Type', 'application/json');
+    ajax.send(JSON.stringify(newOntology));
+}
+
+
+
+
+
+
+
+
+
+
+
+

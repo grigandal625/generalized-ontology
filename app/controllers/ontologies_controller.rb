@@ -16,7 +16,54 @@ class OntologiesController < ApplicationController
     elementsID = childElementsID | parentElementsID
 	@elements = Element.find(elementsID)
   end
-  
+
+
+  def create
+    new_onto = Ontology.create(ontology_name: params[:name])
+    new_id = new_onto[:ontology_id]
+
+    if !params[:structure].nil?
+      params[:structure].each do |struct|
+        struct[:ontology_id] = new_id
+        HierarchicalStructure.create(struct.permit(:element_weight, :level_id, :parent_element, :ontology_id, :element_id))
+      end
+    end
+
+    if !params[:links].nil?
+      params[:links].each do |link|
+        link[:ontology_id] = new_id
+        Link.create(link.permit(:element_id, :link_type, :linked_element_id, :ontology_id))
+      end
+    end
+
+    if !params[:competences].nil?
+      params[:competences].each do |comp|
+        comp[:ontology_id] = new_id
+        ElementToCompetence.create(comp.permit(:element_id, :competence_weight, :ontology_id, :competence_id))
+      end
+    end
+
+    #Пока что сохраняю с признаками. В крайнем случае, можно будет просто потереть из БД
+    if !params[:signs].nil?
+      params[:signs].each do |sign|
+        sign[:ontology_id] = new_id
+        SignToElement.create(sign.permit(:element_id, :sign_rang, :ontology_id, :sign_id))
+      end
+    end
+
+    render text: "OK"
+  end
+
+
+  def destroy
+    Ontology.destroy_all(ontology_id: params[:id])
+    HierarchicalStructure.destroy_all(ontology_id: params[:id])
+    Link.destroy_all(ontology_id: params[:id])
+    ElementToCompetence.destroy_all(ontology_id: params[:id])
+    SignToElement.destroy_all(ontology_id: params[:id])
+
+    render text: "OK"
+  end
   
   def mainMenu
   #render text: "OK"
