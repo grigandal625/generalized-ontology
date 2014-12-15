@@ -54,7 +54,6 @@ class OntologiesController < ApplicationController
     render text: "OK"
   end
 
-
   def destroy
     Ontology.destroy_all(ontology_id: params[:id])
     HierarchicalStructure.destroy_all(ontology_id: params[:id])
@@ -62,7 +61,7 @@ class OntologiesController < ApplicationController
     ElementToCompetence.destroy_all(ontology_id: params[:id])
     SignToElement.destroy_all(ontology_id: params[:id])
 
-    render text: "OK"
+    redirect_to ontologies_path
   end
   
   def mainMenu
