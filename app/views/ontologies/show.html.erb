@@ -13,11 +13,23 @@
         <button id="LocateBtn">"Поиск" элемента</button>
         <button id="UndoBtn">Отменить</button>
         <button id="SaveBtn">Сохранить как..</button>
-		<div class="buttonsContainer">
-			<button>Выход</button>
-		</div>
 	</div>
 </div>
+
+    <table  id="ElementDataTable" style="">
+      <tr>
+        <td>id:</td>
+        <td id="DataTableIdCell"></td>
+      </tr>
+      <tr>
+        <td>name:</td>
+        <td id="DataTableNameCell"></td>
+      </tr>
+      <tr>
+        <td>data:</td>
+        <td id="DataTableDataCell"></td>
+      </tr>
+    </table>
 
 <!-- <%= javascript_include_tag "search-field-handler" %> -->
 <%= javascript_include_tag "getonto" %>

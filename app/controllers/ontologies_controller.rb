@@ -17,10 +17,14 @@ class OntologiesController < ApplicationController
 	@elements = Element.find(elementsID)
   end
 
-
+  #Сохранение новой онтологии
   def create
+    #Создаем соотв. экземпляр модели
     new_onto = Ontology.create(ontology_name: params[:name])
+    #Запоминаем новый айдишник (понадобится в дальнейшем)
     new_id = new_onto[:ontology_id]
+
+    #Далее для всех необходимых моделей заменяем старый айдишник онтологии на новый и сохраняем
 
     if !params[:structure].nil?
       params[:structure].each do |struct|
@@ -51,16 +55,20 @@ class OntologiesController < ApplicationController
       end
     end
 
+    #Возвращаем сообщение об успешном выполнении
     render text: "OK"
   end
 
+  #Удаление онтологии
   def destroy
+    #Удаляем из всех таблиц строки с соотв. ontology_id
     Ontology.destroy_all(ontology_id: params[:id])
     HierarchicalStructure.destroy_all(ontology_id: params[:id])
     Link.destroy_all(ontology_id: params[:id])
     ElementToCompetence.destroy_all(ontology_id: params[:id])
     SignToElement.destroy_all(ontology_id: params[:id])
 
+    #и возвращаемся на главную
     redirect_to ontologies_path
   end
   

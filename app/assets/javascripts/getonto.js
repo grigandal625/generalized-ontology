@@ -140,6 +140,11 @@ function paintOnto() {
 
 						$(canvas).bind('mousemove', handler.dragged)
 						$(window).bind('mouseup', handler.dropped)
+
+                        //Костылик для окошка с инфой по элементу
+                        //Также, как с экшн-меню на главной не получится, т.к. mousedown-обработчик на canvas перекрывает аналогичный на документе
+                        var DataTable = document.getElementById("ElementDataTable");
+                        DataTable.style.display == "block" ? DataTable.style.display = "none" : undefined;
 						
 						//Если при клике по элементу нажат Shift - выделяем его
 						if (e.shiftKey) {
@@ -151,9 +156,13 @@ function paintOnto() {
 							dragged.node.data.areLinksShown ? hideLinks(dragged.node.name) : showLinks(dragged.node.name);	
 							dragged.node.data.areLinksShown = !(dragged.node.data.areLinksShown);
 						}
-						
+
+                        //Если при клике по элементу нажат Alt - показываем информацию об элементе
 						if (e.altKey) {
-							//Показать информацию об элементе 
+                            //Получаем ссылку на данный элемент в онтологии
+                            var element = GetElement(ontology, +dragged.node.name);
+                            //Отображаем информацию о нем
+                            ShowElementData(element);
 						}
 
 						return false
@@ -274,7 +283,7 @@ function paintOnto() {
     //По идее, нужно отображать только исходящие дуги. В ином случае использовать функцию: isSelected = function(node){var id = node.name; var selectedElems = document.getElementsByClassName('selectedElement'); for (var i = 0; i < selectedElems.length; i++) { if (id == selectedElems[i].id){ return true; } } return false;}
 	//и добавить соответствующие альтернативы в условные блоки
     
-    showLinks = function(id){ //Вылазит косяк данных: некоторые из элементов онтологии связаны с такими элементами, которых нет в ее иерархической структуре (???????)
+    var showLinks = function(id){ //Вылазит косяк данных: некоторые из элементов онтологии связаны с такими элементами, которых нет в ее иерархической структуре (???????)
 		sys.parameters({stiffness: 0});
 		for (var i = 0; i < ontology.links.length; i++) {
 			if (ontology.links[i].element_id == id) {
@@ -283,7 +292,7 @@ function paintOnto() {
 		}
 	}
 
-	hideLinks = function(id){ 
+	var hideLinks = function(id){
 		var linksFrom = sys.getEdgesFrom(id);
 		
 		for (var i = 0; i < linksFrom.length; i++){
@@ -297,7 +306,7 @@ function paintOnto() {
 		}
 	}
 
-	selectElement = function(event){
+	var selectElement = function(event){
 		var elem = event.target;
 		if (elem.className == "listElement") {
 			elem.className = elem.className +" selectedElement";
@@ -323,4 +332,38 @@ function paintOnto() {
 		listElems[i].onclick = selectElement;
 	}
 
+}
+
+
+
+
+
+
+
+
+function ShowElementData(element) {
+    var DataTable = document.getElementById("ElementDataTable");
+
+    //Переносим ее под курсор
+    DataTable.style.top = event.clientY + 'px';
+    DataTable.style.left = event.clientX + 'px';
+    //Отображаем
+    DataTable.style.display = "block";
+
+    var IdCell = document.getElementById("DataTableIdCell");
+    IdCell.innerHTML = '' + element.element_id;
+
+    var NameCell = document.getElementById("DataTableNameCell");
+    NameCell.innerHTML = '' + element.element_name;
+
+    var DataCell = document.getElementById("DataTableDataCell");
+    DataCell.innerHTML = '' + element.element_data;
+}
+
+function GetElement(ontology, id) {
+    for (var i = 0; i < ontology.elements.length; i++) {
+        if (ontology.elements[i].element_id == id) {
+            return ontology.elements[i];
+        }
+    }
 }
