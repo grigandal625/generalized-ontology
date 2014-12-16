@@ -1,37 +1,40 @@
 <div class="windowOutsideStyle" style="height: 800px; width: 1500px; left: 50%; top: 40%; margin-left: -750px; margin-top: -325px;">
 	<div class="heading"><%= @ontology.ontology_name %></div>
 	<div class="windowInsideStyle" style="height: 775px;">
-		<canvas></canvas>
+        <div style="float: right; width: 1010px; text-align: left; padding: 5px; margin-right: 15px;">
+          <button id="UniteBtn">Объединить с..</button>
+          <button id="ExcerptBtn">Выполнить выборку</button>
+          <button id="CutBtn">Отсечь элементы</button>
+          <button id="LocateBtn">"Поиск" элемента</button>
+          <button id="UndoBtn"><%= image_tag "undo.png", {height: 20, style: 'vertical-align: middle;' } %></button>
+          <button id="SaveBtn" style="float: right;">Сохранить как..</button>
+          <canvas style="margin: 5px;"></canvas>
+        </div>
+
 		<h5>Список элементов онтологии:</h5>
-		<!-- В баню пока что строку поиска <input type="text" class="textField"> -->
-		<div class="list" style="height: 630px;">
+		<input type="text" class="textField" style="margin: 5px;">
+		<div class="list" style="height: 655px;">
           <ul class="Container"></ul>
 		</div>
-        <button id="UniteBtn">Объединить с..</button>
-        <button id="ExcerptBtn">Выполнить выборку</button>
-        <button id="CutBtn">Отсечь элементы</button>
-        <button id="LocateBtn">"Поиск" элемента</button>
-        <button id="UndoBtn">Отменить</button>
-        <button id="SaveBtn">Сохранить как..</button>
+
 	</div>
 </div>
 
-    <table  id="ElementDataTable" style="">
-      <tr>
+<table  id="ElementDataTable" style="">
+    <tr>
         <td>id:</td>
         <td id="DataTableIdCell"></td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <td>name:</td>
         <td id="DataTableNameCell"></td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <td>data:</td>
         <td id="DataTableDataCell"></td>
-      </tr>
-    </table>
+    </tr>
+</table>
 
-<!-- <%= javascript_include_tag "search-field-handler" %> -->
 <%= javascript_include_tag "getonto" %>
 <%= javascript_include_tag "tree-script" %>
 <%= javascript_include_tag "operations" %>
