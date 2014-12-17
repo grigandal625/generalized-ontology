@@ -34,6 +34,9 @@ CutBtn.onclick = function() {
         alert("Операция не может быть выполнена");
     } else {
         //Если же все прошло удачно
+        //Перерисовывем древовидный список элементов
+        paintTree();
+
         //Корректируем изображение графа
         CorrectParticleSystemContent();
 
@@ -54,6 +57,9 @@ UndoBtn.onclick = function() {
     if (ontologyBackupStack.length > 0) {
         //Откатываем онтологию
         ontology = ontologyBackupStack.pop();
+
+        //Перерисовывем древовидный список элементов
+        paintTree();
 
         //Корректируем изображение графа
         CorrectParticleSystemContent();
@@ -294,6 +300,9 @@ ExcerptBtn.onclick = function() {
         alert("Операция не может быть выполнена");
     } else {
         //Если же все прошло удачно
+        //Перерисовывем древовидный список элементов
+        paintTree();
+
         //Корректируем изображение графа
         CorrectParticleSystemContent();
 
@@ -416,6 +425,9 @@ LocateBtn.onclick = function() {
         alert("Операция не может быть выполнена");
     } else {
         //Если же все прошло удачно
+        //Перерисовывем древовидный список элементов
+        paintTree();
+
         //Корректируем изображение графа
         CorrectParticleSystemContent();
 
@@ -466,18 +478,18 @@ function LocateElement(ontology, id, bfsFlag, dfsFlag) {
         }
     }
 
-    //Теперь пробежимся по структуре онтологии, чтобы определить, какие элементы нам нужны. Заодно сразу же определим структуру новой онтологии.
+    //Нашел багу: если брать одновременно элементы того же уровня иерархии и родителя/потомков, то между родителем и элементами того же уровня могут быть иерархические связи, неучтенные в данном варианте алгоритма
+
+    //Теперь пробежимся по структуре онтологии, чтобы определить, какие элементы нам нужны.
     for (var i = 0; i < ontology.structure.length; i++) {
         //Если требуется, находим элемент-родитель...
         if (dfsFlag && ontology.structure[i].element_id == id) {
             elementsToAdd.push(ontology.structure[i].parent_element);
-            result.structure.push(JSON.parse(JSON.stringify(ontology.structure[i])));
         }
 
         //... и элементы-потомки
         if (dfsFlag && ontology.structure[i].parent_element == id) {
             elementsToAdd.push(ontology.structure[i].element_id);
-            result.structure.push(JSON.parse(JSON.stringify(ontology.structure[i])));
         }
 
         //Если требуется, берем элементы с уровня иерархии, определенного ранее
@@ -492,6 +504,13 @@ function LocateElement(ontology, id, bfsFlag, dfsFlag) {
         //Если элемент есть среди тех, которые выбраны - добавляем его
         if (elementsToAdd.indexOf(ontology.elements[i].element_id) >= 0) {
             result.elements.push(JSON.parse(JSON.stringify(ontology.elements[i])));
+        }
+    }
+
+    //Добавляем иерархические связи
+    for (var i = 0; i < ontology.structure.length; i++) {
+        if (elementsToAdd.indexOf(ontology.structure[i].element_id) >= 0 && elementsToAdd.indexOf(ontology.structure[i].parent_element) >= 0) {
+            result.structure.push(JSON.parse(JSON.stringify(ontology.structure[i])));
         }
     }
 
@@ -583,6 +602,9 @@ UniteBtn.onclick = function() {
                         alert("Операция не может быть выполнена");
                     } else {
                         //Если же все прошло удачно
+                        //Перерисовывем древовидный список элементов
+                        paintTree();
+
                         //Корректируем изображение графа
                         CorrectParticleSystemContent();
 

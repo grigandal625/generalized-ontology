@@ -13,8 +13,15 @@ function createNode(elem){
 
     var content = document.createElement('div');
     content.className = 'Content';
-    content.innerHTML = '<div class = "listElement">(' + elem.element_id + ')' + ' ' + elem.element_name + '</div>';    //Вложенный div - костыль для совместимости со старыми стилями списков
+    content.innerHTML = /*'<div class = "listElement">*/'(' + elem.element_id + ')' + ' ' + elem.element_name/* + '</div>'*/;    //Вложенный div - костыль для совместимости со старыми стилями списков
     node.appendChild(content);
+
+    //Экспериментирую с поиском по дереву
+    node.content = content;
+    node.SearchResult = SearchResult;
+
+    //Экспериментирую с клик хендлерами
+    content.classList.add("listElement");
 
     var container = document.createElement('ul');
     container.className = 'Container';
@@ -27,7 +34,11 @@ function createNode(elem){
 function paintTree() {
     var node;
     var origin = document.getElementsByClassName('Container')[0];
-    //origin.onclick = tree_toggle;
+
+    //Удаляем все из контейнера для списка, если там что-то было до этого (в частности, при перерисовке списка)
+    while (origin.firstChild) {
+        origin.removeChild(origin.firstChild);
+    }
 
     for (var i = 0; i < ontology.elements.length; i++){
         node = createNode(ontology.elements[i]);
@@ -118,4 +129,33 @@ function expandNode(){
 
 function hasClass(elem, className) {
     return new RegExp("(^|\\s)"+className+"(\\s|$)").test(elem.className)
+}
+
+function SearchResult(input) {
+    var flag = false;
+
+    for (var i = 0; i < this.container.children.length; i++) {
+        flag = this.container.children[i].SearchResult(input) || flag;
+    }
+
+    if (this.content.innerHTML.toLowerCase().indexOf(input.toLowerCase()) >= 0 || flag) {
+        this.style.display = "block";
+        return true;
+    }
+    else {
+        this.style.display = "none";
+        return false;
+    }
+}
+
+var textField = document.getElementsByClassName("textField")[0];
+
+textField.onkeyup = function () {
+    var input = this.value;
+
+    var roots = document.getElementsByClassName("IsRoot")
+
+    for (var i = 0; i < roots.length; i++) {
+        roots[i].SearchResult(input);
+    }
 }

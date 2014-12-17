@@ -148,7 +148,18 @@ function paintOnto() {
 						
 						//Если при клике по элементу нажат Shift - выделяем его
 						if (e.shiftKey) {
+                            var listElem = document.getElementById(dragged.node.name).content;
 							dragged.node.data.isSelected = !(dragged.node.data.isSelected);
+
+                            //Также выделяем и соответствующий элемент в древовидном списке
+                            if (dragged.node.data.isSelected) {
+                                listElem.classList.add("selectedElement");
+                            } else {
+                                if (listElem.classList.contains("selectedElement")){
+                                    listElem.classList.remove("selectedElement");
+                                }
+                            }
+
 						}
 						
 						//Если при клике по элементу нажат Ctrl - отобразить связи
@@ -308,12 +319,16 @@ function paintOnto() {
 
 	var selectElement = function(event){
 		var elem = event.target;
-		if (elem.className == "listElement") {
-			elem.className = elem.className +" selectedElement";
-			showLinks(elem.parentNode.parentNode.id);   //Костыли из-за нового отображения списка элементов
+        var node = sys.getNode(elem.parentNode.id);
+
+		if (!elem.classList.contains("selectedElement")) {
+			elem.classList.add("selectedElement");
+            node.data.isSelected = true;
+			//showLinks(elem.parentNode.parentNode.id);   //Костыли из-за нового отображения списка элементов
 		} else {
-			elem.className = "listElement";
-			hideLinks(elem.parentNode.parentNode.id);   //Костыли из-за нового отображения списка элементов
+            elem.classList.remove("selectedElement");
+            node.data.isSelected = false;
+			//hideLinks(elem.parentNode.parentNode.id);   //Костыли из-за нового отображения списка элементов
 		}
 	}
 
@@ -333,7 +348,6 @@ function paintOnto() {
 	}
 
 }
-
 
 
 
