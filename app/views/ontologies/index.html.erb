@@ -8,9 +8,6 @@
 				<div class="listElement" id="<%= ontology.ontology_id %>"><%= ontology.ontology_name %></div>
 			<% end %>	
 		</div>
-		<div class="buttonsContainer">
-			<button>Выход</button>
-		</div>
 	</div>
 </div>
 
@@ -18,5 +15,5 @@
     <a data-method="delete" rel="nofollow" ><div class="actionMenuOption">Удалить</div></a>
 </div>
 
-<%= javascript_include_tag "index-click-handler" %>
-<%= javascript_include_tag "textfield-handler" %>
+<%= javascript_include_tag "index/index-click-handler" %>
+<%= javascript_include_tag "index/textfield-handler" %>

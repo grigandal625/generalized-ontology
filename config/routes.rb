@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
   resources :ontologies
-  #get 'ontologies/index'
   root 'ontologies#index'
-  get 'test' => 'ontologies#test'#Пробую написать иерархический список
-  get 'treeTest/:id' => 'ontologies#sendOntology'
-  get 'ontologiesList' => 'ontologies#sendList'
-  #get 'elements/:id' => 'ontologies#sendElements'
   get 'ontologies/:id/get' => 'ontologies#sendOntology'
-  post 'ontologiesSave' => 'ontologies#saveOntology'
-  get 'debugging1' => 'ontologies#firstDebugging'
-  get 'debugging2' => 'ontologies#secDebugging'
-  get 'paint/:id' => 'ontologies#paintOnto'
-  get 'mainMenu' => 'ontologies#mainMenu'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
