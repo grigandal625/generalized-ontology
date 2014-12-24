@@ -35,7 +35,7 @@ window.onload = function getOnto() {    //По идее можно даже вы
 }
 
 function DrawOnto(sys, ontology) {
-    var canvas = document.getElementsByTagName("canvas")[0];    //Надо бы запилить айдишник все-таки
+    var canvas = document.getElementById("DrawSpot");
 
     //Определяем отрисовщик
     sys.renderer = Renderer(canvas);

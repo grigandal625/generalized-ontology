@@ -1,9 +1,9 @@
-<div class="windowOutsideStyle" style="height: 300px; left: 50%; top: 40%; margin-left: -256px; margin-top: -156px;">
+<div class="windowOutsideStyle" id="index-window-outside">
 	<div class="heading">Построение обобщенной онтологии</div>
-	<div class="windowInsideStyle" style="height: 275px;">
+	<div class="windowInsideStyle" id="index-window-inside">
 		<h5>Список онтологий курсов/дисциплин:</h5>
 		<input type="text" class="textField">
-		<div class="list" style="height: 130px; cursor: pointer;">
+		<div class="list" id="index-list">
 			<% @ontologies.each do |ontology| %>
 				<div class="listElement" id="<%= ontology.ontology_id %>"><%= ontology.ontology_name %></div>
 			<% end %>	

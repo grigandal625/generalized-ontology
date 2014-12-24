@@ -1,0 +1,66 @@
+/* --- ТАБЛИЦА СТИЛЕЙ ДЛЯ СТРАНИЦЫ SHOW --- */
+
+/* Стили для окошка */
+#show-window-outside {
+    height: 800px;
+    width: 1500px;
+    left: 50%;
+    top: 40%;
+    margin-left: -750px;
+    margin-top: -325px;
+}
+
+#show-window-inside {
+    height: 775px;
+}
+
+/* Стиль для списка элементов */
+#show-list {
+    height: 655px;
+}
+
+/* Стили для выделенных элементов списка */
+.selectedElement{
+    font-weight: bold;
+    background: url(<%= asset_data_uri 'sign.png' %>) no-repeat;
+    padding-left: 15px;
+}
+
+/* Стиль для кнопки "Сохранить как" */
+#SaveBtn {
+    float: right;
+}
+
+/* Стиль для картинки на кнопке "Отменить" */
+#UndoImg {
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* Стили для контейнера кнопок и канваса */
+#CanvasContainer {
+    float: right;
+    width: 1010px;
+    text-align: left;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+/* Стили для канваса */
+#DrawSpot {
+    border: 1px solid;
+    width: 1000px;
+    height: 710px;
+    background-color: white;
+    margin: 5px;
+}
+
+/* Стили для окошка с инфой по элементу онтологии */
+#ElementDataTable {
+    display: none;
+    background: linear-gradient(135deg, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(240,239,244,1) 47%,rgba(219,220,226,1) 85%,rgba(245,246,246,1) 100%);
+    border: thin solid #9C9C9C;
+    font-size: 8pt;
+    position: absolute;
+    cursor: default;
+}

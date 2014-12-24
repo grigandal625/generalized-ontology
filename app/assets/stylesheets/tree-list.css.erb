@@ -8,10 +8,9 @@
 }
 
 
-
 /* indent for all tree children excepts root */
 .Node {
-    background-image : url(<%= asset_data_uri 'img/i.gif' %>);
+    background-image : url(<%= asset_data_uri 'tree_list_images/i.gif' %>);
     background-position : top left;
     background-repeat : repeat-y;
     margin-left: 18px;
@@ -25,22 +24,22 @@
 
 /* left vertical line (grid) for all nodes */
 .IsLast {
-    background-image: url(<%= asset_data_uri 'img/i_half.gif' %>);
+    background-image: url(<%= asset_data_uri 'tree_list_images/i_half.gif' %>);
     background-repeat : no-repeat;
 }
 
 .ExpandOpen .Expand {
-    background-image: url(<%= asset_data_uri 'img/expand_minus.gif' %>);
+    background-image: url(<%= asset_data_uri 'tree_list_images/expand_minus.gif' %>);
 }
 
 /* closed is higher priority than open */
 .ExpandClosed .Expand {
-    background-image: url(<%= asset_data_uri 'img/expand_plus.gif' %>);
+    background-image: url(<%= asset_data_uri 'tree_list_images/expand_plus.gif' %>);
 }
 
 /* highest priority */
 .ExpandLeaf .Expand {
-    background-image: url(<%= asset_data_uri 'img/expand_leaf.gif' %>);
+    background-image: url(<%= asset_data_uri 'tree_list_images/expand_leaf.gif' %>);
 }
 
 .Content {
@@ -65,7 +64,7 @@
     width: 18px;
     height: 18px;
     float: left;
-    background-image: url(<%= asset_data_uri 'img/expand_loading.gif' %>);
+    background-image: url(<%= asset_data_uri 'tree_list_images/expand_loading.gif' %>);
 }
 
 

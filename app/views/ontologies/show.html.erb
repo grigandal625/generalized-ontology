@@ -1,19 +1,19 @@
-<div class="windowOutsideStyle" style="height: 800px; width: 1500px; left: 50%; top: 40%; margin-left: -750px; margin-top: -325px;">
+<div class="windowOutsideStyle" id="show-window-outside">
 	<div class="heading"><%= @ontology.ontology_name %></div>
-	<div class="windowInsideStyle" style="height: 775px;">
-        <div style="float: right; width: 1010px; text-align: left; padding: 5px; margin-right: 15px;">
+	<div class="windowInsideStyle" id="show-window-inside">
+        <div id="CanvasContainer">
           <button id="UniteBtn">Объединить с..</button>
           <button id="ExcerptBtn">Выполнить выборку</button>
           <button id="CutBtn">Отсечь элементы</button>
           <button id="LocateBtn">"Поиск" элемента</button>
-          <button id="UndoBtn"><%= image_tag "undo.png", {height: 20, style: 'vertical-align: middle;' } %></button>
-          <button id="SaveBtn" style="float: right;">Сохранить как..</button>
-          <canvas style="margin: 5px;"></canvas>
+          <button id="UndoBtn"><%= image_tag "undo.png", {id: "UndoImg"} %></button>
+          <button id="SaveBtn">Сохранить как..</button>
+          <canvas id="DrawSpot"></canvas>
         </div>
 
 		<h5>Список элементов онтологии:</h5>
-		<input type="text" class="textField" style="margin: 5px;">
-		<div class="list" style="height: 655px;">
+		<input type="text" class="textField">
+		<div class="list" id="show-list">
           <ul class="Container"></ul>
 		</div>
 	</div>
