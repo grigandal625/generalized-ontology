@@ -26,16 +26,25 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ontologies/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
+            <state line="16" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tree-list.css.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tree-list.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree-list.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="0.3773585" vertical-offset="0" max-vertical-offset="1547">
+            <state line="20" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="-0.0" vertical-offset="340" max-vertical-offset="1547">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ontologies_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="0" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.4498382" vertical-offset="671" max-vertical-offset="1666">
               <folding />
             </state>
           </provider>
@@ -44,7 +53,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="782">
+            <state line="35" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
@@ -53,7 +62,7 @@
       <file leaf-file-name="index.css.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.css.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="969">
+            <state line="11" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="969">
               <folding />
             </state>
           </provider>
@@ -108,7 +117,6 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/particle-system-handler.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/show/particle-system-handler.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/show/operations.js" />
-        <option value="$PROJECT_DIR$/app/controllers/ontologies_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/main.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/show/init-script.js" />
@@ -120,6 +128,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/show.css.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tree.css.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/ontologies_controller.rb" />
       </list>
     </option>
   </component>
@@ -590,15 +599,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29659212" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.299787" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -607,10 +615,11 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -629,9 +638,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -651,6 +660,27 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree-list.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.css.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="66" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="187" />
@@ -675,9 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/init-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="5253">
-          <folding />
-        </state>
+        <state line="10" column="28" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="5253" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
@@ -716,9 +744,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/init-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="0" selection-start="9661" selection-end="9661" vertical-scroll-proportion="0.0" vertical-offset="5117" max-vertical-offset="5236">
-          <folding />
-        </state>
+        <state line="301" column="0" selection-start="9661" selection-end="9661" vertical-scroll-proportion="0.0" vertical-offset="5117" max-vertical-offset="5236" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
@@ -730,9 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/init-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="4" selection-start="8357" selection-end="8357" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5236">
-          <folding />
-        </state>
+        <state line="257" column="4" selection-start="8357" selection-end="8357" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5236" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/script.js">
@@ -809,23 +833,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/getxmlhttp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index/index-click-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="18" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <folding />
-        </state>
+        <state line="16" column="18" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/index/textfield-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="48" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
+        <state line="8" column="48" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
@@ -837,112 +855,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/tree-list-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="24" selection-start="878" selection-end="878" vertical-scroll-proportion="0.3522976" vertical-offset="120" max-vertical-offset="3009">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="31" selection-start="2585" selection-end="2585" vertical-scroll-proportion="1.412082" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="26" column="24" selection-start="878" selection-end="878" vertical-scroll-proportion="0.3522976" vertical-offset="120" max-vertical-offset="3009" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/operations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="283" column="23" selection-start="9575" selection-end="9577" vertical-scroll-proportion="0.33333334" vertical-offset="4515" max-vertical-offset="7259">
-          <folding />
-        </state>
+        <state line="283" column="23" selection-start="9575" selection-end="9577" vertical-scroll-proportion="0.33333334" vertical-offset="4515" max-vertical-offset="7259" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/ontologies.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="579" selection-end="579" vertical-scroll-proportion="0.201726" vertical-offset="0" max-vertical-offset="927">
-          <folding />
-        </state>
+        <state line="11" column="2" selection-start="579" selection-end="579" vertical-scroll-proportion="0.201726" vertical-offset="0" max-vertical-offset="927" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/particle-system-handler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="95" selection-start="131" selection-end="137" vertical-scroll-proportion="0.05743243" vertical-offset="0" max-vertical-offset="5372">
-          <folding />
-        </state>
+        <state line="3" column="95" selection-start="131" selection-end="137" vertical-scroll-proportion="0.05743243" vertical-offset="0" max-vertical-offset="5372" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/show/init-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="53" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.33333334" vertical-offset="333" max-vertical-offset="6392">
-          <folding />
-        </state>
+        <state line="37" column="53" selection-start="1843" selection-end="1843" vertical-scroll-proportion="0.33333334" vertical-offset="333" max-vertical-offset="6392" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="182" selection-end="182" vertical-scroll-proportion="0.094339624" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
+        <state line="5" column="38" selection-start="182" selection-end="182" vertical-scroll-proportion="0.094339624" vertical-offset="0" max-vertical-offset="901" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
+        <state line="16" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
+        <state line="12" column="16" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="927" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/general.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="37" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0754717" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
+        <state line="4" column="37" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0754717" vertical-offset="0" max-vertical-offset="1258" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/show.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="741" selection-end="741" vertical-scroll-proportion="0.754717" vertical-offset="0" max-vertical-offset="1207">
-          <folding />
-        </state>
+        <state line="40" column="18" selection-start="741" selection-end="741" vertical-scroll-proportion="0.754717" vertical-offset="0" max-vertical-offset="1207" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/ontologies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="782">
+        <state line="35" column="0" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/index.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="969">
+        <state line="11" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tree-list.css.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="0.3773585" vertical-offset="0" max-vertical-offset="1547">
+        <state line="20" column="19" selection-start="364" selection-end="364" vertical-scroll-proportion="-0.0" vertical-offset="340" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ontologies_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="2130" selection-end="2130" vertical-scroll-proportion="0.4498382" vertical-offset="671" max-vertical-offset="1666">
           <folding />
         </state>
       </provider>

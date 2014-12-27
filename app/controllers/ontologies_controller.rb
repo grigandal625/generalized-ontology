@@ -59,7 +59,7 @@ class OntologiesController < ApplicationController
   #Удаление онтологии
   def destroy
     #Впилю небольшую заглушку, чтобы нельзя было удалить исходные шесть онтологий
-    if params[:id] <= 6
+    if params[:id] <= '6'
       render text: "Данную онтологию нельзя удалить"
     end
 
