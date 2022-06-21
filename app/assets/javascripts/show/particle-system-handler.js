@@ -11,7 +11,8 @@ function Renderer(canvas) {
 
     var that = {
         //init вызывается единожды, когда создается система
-        init:function(system){
+        init: function (system) {
+            debugger;
             particleSystem = system;
 
             //Передаем системе размеры канвы
@@ -23,13 +24,14 @@ function Renderer(canvas) {
         },
 
         //redraw (перерисовка) вызывается каждый раз, когда изменяется положение частиц в системе (читай, постоянно)
-        redraw:function(){
+        redraw: function () {
+            debugger;
             //Сначала очищаем canvas
-            ctx.fillStyle = "white"
-            ctx.fillRect(0,0, canvas.offsetWidth, canvas.offsetHeight)
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
             //Отрисовываем все ребра системы частиц:
-            particleSystem.eachEdge(function(edge, pt1, pt2){
+            particleSystem.eachEdge(function (edge, pt1, pt2) {
                 //Цвет выбираем взависимости от типа:
                 switch (edge.data.type) {
                     //Для иерархических связей (ребер дерева)
@@ -50,19 +52,20 @@ function Renderer(canvas) {
                 //P.S. Узнать бы еще, каким кодом какой тип обозначается
 
                 //Собственно, проводим линию
-                ctx.lineWidth = 1
-                ctx.beginPath()
-                ctx.moveTo(pt1.x, pt1.y)
-                ctx.lineTo(pt2.x, pt2.y)
-                ctx.stroke()
-            })
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(pt1.x, pt1.y);
+                ctx.lineTo(pt2.x, pt2.y);
+                ctx.stroke();
+            });
 
             //Отрисовываем все вершины:
-            particleSystem.eachNode(function(node, pt){
+            particleSystem.eachNode(function (node, pt) {
                 //Замеряем ширину текста
-                var w = ctx.measureText(node.name).width;   //ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w); - оригинальный код из демо
+                pt = pt || node._p
+                var w = ctx.measureText(node.name).width; //ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w); - оригинальный код из демо
                 //Закрашиваем соотв.область белым
-                ctx.clearRect(pt.x-w/2, pt.y-7, w,14);
+                ctx.clearRect(pt.x - w / 2, pt.y - 7, w, 14);
 
                 //На всякий случай оставлю в комментах, как нарисовать рамку
                 //ctx.rect(pt.x-w/2, pt.y-7, w,14);
@@ -72,21 +75,21 @@ function Renderer(canvas) {
                 ctx.font = "bold 11px Arial";
                 ctx.textAlign = "center";
                 //Выделенные элементы пишем красным, остальные - черным
-                node.data.isSelected ? ctx.fillStyle = "#FF0000" : ctx.fillStyle = "#888888";
+                node.data.isSelected ? (ctx.fillStyle = "#FF0000") : (ctx.fillStyle = "#888888");
                 //Пишем текст (название вершины)
                 ctx.fillText(node.name, pt.x, pt.y + 4);
-            })
+            });
         },
 
         //Инициализация обработчиков кликов
-        initMouseHandling:function(){
+        initMouseHandling: function () {
             var dragged = null;
 
             var handler = {
-                clicked:function(e){
+                clicked: function (e) {
                     //Определяем, в какой пиксель ткнули
                     var pos = $(canvas).offset();
-                    _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+                    _mouseP = arbor.Point(e.pageX - pos.left, e.pageY - pos.top);
                     //Находим ближайшую вершину
                     var clicked = particleSystem.nearest(_mouseP);
 
@@ -98,18 +101,18 @@ function Renderer(canvas) {
                     //Костылик для скрытия окошка с инфой об элементу
                     //Также, как с экшн-меню на главной не получится, т.к. mousedown-обработчик на canvas перекрывает аналогичный на документе
                     var DataTable = document.getElementById("ElementDataTable");
-                    DataTable.style.display == "block" ? DataTable.style.display = "none" : undefined;
+                    DataTable.style.display == "block" ? (DataTable.style.display = "none") : undefined;
 
                     //Если при клике по элементу нажат Shift - выделяем его
                     if (e.shiftKey) {
                         var listElem = document.getElementById(clicked.node.name).content;
-                        clicked.node.data.isSelected = !(clicked.node.data.isSelected);
+                        clicked.node.data.isSelected = !clicked.node.data.isSelected;
 
                         //Также выделяем и соответствующий элемент в древовидном списке
                         if (clicked.node.data.isSelected) {
                             listElem.classList.add("selectedElement");
                         } else {
-                            if (listElem.classList.contains("selectedElement")){
+                            if (listElem.classList.contains("selectedElement")) {
                                 listElem.classList.remove("selectedElement");
                             }
                         }
@@ -130,8 +133,10 @@ function Renderer(canvas) {
                             return false;
                         }
 
-                        clicked.node.data.areLinksShown ? particleSystem.hideLinks(clicked.node.name) : particleSystem.showLinks(clicked.node.name);
-                        clicked.node.data.areLinksShown = !(clicked.node.data.areLinksShown);
+                        clicked.node.data.areLinksShown
+                            ? particleSystem.hideLinks(clicked.node.name)
+                            : particleSystem.showLinks(clicked.node.name);
+                        clicked.node.data.areLinksShown = !clicked.node.data.areLinksShown;
 
                         //После отображения нужно скорректировать параметры системы (зачем - см. саму функцию)
                         CorrectParticleSystemParameters(particleSystem); //Вроде видит particleSystem
@@ -151,58 +156,56 @@ function Renderer(canvas) {
                     //Передаем в другие функции кликнутую вершину через общую переменную dragged
                     dragged = clicked;
                     //Фиксируем узел, пока тащим его
-                    dragged.node.fixed = true
+                    dragged.node.fixed = true;
 
                     //Вешаем обработчики drag'n'drop'а
-                    $(canvas).bind('mousemove', handler.dragged)
-                    $(window).bind('mouseup', handler.dropped)
+                    $(canvas).bind("mousemove", handler.dragged);
+                    $(window).bind("mouseup", handler.dropped);
 
-                    return false
+                    return false;
                 },
 
-                dragged:function(e){
+                dragged: function (e) {
                     var pos = $(canvas).offset();
-                    var s = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+                    var s = arbor.Point(e.pageX - pos.left, e.pageY - pos.top);
 
-                    if (dragged && dragged.node !== null){
-                        var p = particleSystem.fromScreen(s)
-                        dragged.node.p = p
+                    if (dragged && dragged.node !== null) {
+                        var p = particleSystem.fromScreen(s);
+                        dragged.node.p = p;
                     }
 
-                    return false
+                    return false;
                 },
 
-                dropped:function(e){
-                    if (dragged===null || dragged.node===undefined) return
-                    if (dragged.node !== null) dragged.node.fixed = false
-                    dragged.node.tempMass = 1000
-                    dragged = null
+                dropped: function (e) {
+                    if (dragged === null || dragged.node === undefined) return;
+                    if (dragged.node !== null) dragged.node.fixed = false;
+                    dragged.node.tempMass = 1000;
+                    dragged = null;
                     //Когда отпустили мышку, сниаем обработчики
-                    $(canvas).unbind('mousemove', handler.dragged)
-                    $(window).unbind('mouseup', handler.dropped)
-                    _mouseP = null
-                    return false
-                }
-            }
+                    $(canvas).unbind("mousemove", handler.dragged);
+                    $(window).unbind("mouseup", handler.dropped);
+                    _mouseP = null;
+                    return false;
+                },
+            };
 
             //Вешаем клик-listener
             $(canvas).mousedown(handler.clicked);
-        }
-
-    }
-    return that
+        },
+    };
+    return that;
 }
 
-
 //Получение массива выделенных элементов графа
-function GetSelectedNodes(sys){
+function GetSelectedNodes(sys) {
     //Небольшой эксперимент: хочу прикрутить для красоты эту функцию к системе, как метод. Поэтому пишу эту фишечку:
     sys = sys || this;
 
     var selectedElements = [];
 
-    sys.eachNode(function(node, pt){
-        if (node.data.isSelected){
+    sys.eachNode(function (node, pt) {
+        if (node.data.isSelected) {
             //Берем числа, а не строковые идентификаторы, т.к. в некоторых методах у меня используетсся поиск (indexOf) по массиву выделенных элементов
             selectedElements.push(+node.name);
         }
@@ -211,17 +214,16 @@ function GetSelectedNodes(sys){
     return selectedElements;
 }
 
-
-
 //Корректировка содержимого графа (вершин/ребер) в соответствии с текущим состоянием онтологии
 function CorrectParticleSystemContent(ontology, sys) {
     //Небольшой эксперимент: хочу прикрутить для красоты эту функцию к системе, как метод. Поэтому пишу эту фишечку:
     sys = sys || this;
 
     //Сначала удаляем из графа то, чего нет в онтологии
-    sys.eachNode(function(node, pt){
-        for (var i = 0; i < ontology.elements.length; i++){
-            if (node.name == ontology.elements[i].element_id) { //Здесь и далее небольшое допущение: сравнивается строковое (node.name) и числовое значение (element_id)
+    sys.eachNode(function (node, pt) {
+        for (var i = 0; i < ontology.elements.length; i++) {
+            if (node.name == ontology.elements[i].element_id) {
+                //Здесь и далее небольшое допущение: сравнивается строковое (node.name) и числовое значение (element_id)
                 //Убираем выделение (для порядка)
                 node.data.isSelected = false;
                 //Если узел нашелся, прекращаем выполнение
@@ -233,23 +235,30 @@ function CorrectParticleSystemContent(ontology, sys) {
     });
 
     //Затем добавляем то, чего в нем не хватает
-    for (var i = 0; i < ontology.elements.length; i++){
+    for (var i = 0; i < ontology.elements.length; i++) {
         //Если узла нет
-        if (!sys.getNode(ontology.elements[i].element_id)){
+        if (!sys.getNode(ontology.elements[i].element_id)) {
             //Добавляем узел
             //Тут же добавляю инфу об элементе для отображения по альт-клику. Сделал это просто ссылкой, но, может, стоило вручную вписать все св-ва. Пока не знаю
-            sys.addNode(ontology.elements[i].element_id, {isSelected:false, areLinksShown:false, element: ontology.elements[i]});
+            sys.addNode(ontology.elements[i].element_id, {
+                x: 100,
+                y: 100,
+                isSelected: false,
+                areLinksShown: false,
+                element: ontology.elements[i],
+            });
         }
     }
 
-    for (var i = 0; i < ontology.structure.length; i++){
-        if (sys.getEdges('' + ontology.structure[i].parent_element, '' + ontology.structure[i].element_id).length == 0) {    //Нужно обратить внимание на то, что является соусом, а что таргетом
+    for (var i = 0; i < ontology.structure.length; i++) {
+        if (
+            sys.getEdges("" + ontology.structure[i].parent_element, "" + ontology.structure[i].element_id).length == 0
+        ) {
+            //Нужно обратить внимание на то, что является соусом, а что таргетом
             sys.addEdge(ontology.structure[i].parent_element, ontology.structure[i].element_id);
         }
     }
 }
-
-
 
 //Корректировка параметров системы частиц Arbor'а. Зачем это делается - см. issue на GitHub'е
 function CorrectParticleSystemParameters(sys) {
@@ -259,52 +268,45 @@ function CorrectParticleSystemParameters(sys) {
     var linksAreDisplayed;
     var nodeCount = 0;
 
-    sys.eachNode(function(node, pt){
+    sys.eachNode(function (node, pt) {
         nodeCount++;
-        if (node.data.areLinksShown){
+        if (node.data.areLinksShown) {
             linksAreDisplayed = true;
         }
     });
 
     //Регулировка натяжения: если есть хоть одна веорщина с areLinksShown = true - stiffness в ноль
-    if (linksAreDisplayed){
-        sys.parameters({stiffness: 0});
+    if (linksAreDisplayed) {
+        sys.parameters({ stiffness: 0 });
     } else {
-        sys.parameters({stiffness: 600});
+        sys.parameters({ stiffness: 600 });
     }
 
     //Регулировка отталкивания: если в системе только одна вершина - занулить отталкивание
     if (nodeCount > 1) {
-        sys.parameters({repulsion: 1000});
+        sys.parameters({ repulsion: 1000 });
     } else {
-        sys.parameters({repulsion: 0});
+        sys.parameters({ repulsion: 0 });
     }
 }
-
-
-
-
-
 
 //Отображение окошка с инфой об элементе. Куда впихнуть эту ф-цию, хз
 function ShowElementData(element) {
     var DataTable = document.getElementById("ElementDataTable");
 
     //Переносим его под курсор
-    DataTable.style.top = event.clientY + 'px';
-    DataTable.style.left = event.clientX + 'px';
+    DataTable.style.top = event.clientY + "px";
+    DataTable.style.left = event.clientX + "px";
     //Отображаем
     DataTable.style.display = "block";
 
     //Заполняем инфой
     var IdCell = document.getElementById("DataTableIdCell");
-    IdCell.innerHTML = '' + element.element_id;
+    IdCell.innerHTML = "" + element.element_id;
 
     var NameCell = document.getElementById("DataTableNameCell");
-    NameCell.innerHTML = '' + element.element_name;
+    NameCell.innerHTML = "" + element.element_name;
 
     var DataCell = document.getElementById("DataTableDataCell");
-    DataCell.innerHTML = '' + element.element_data;
+    DataCell.innerHTML = "" + element.element_data;
 }
-
-
