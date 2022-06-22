@@ -12,7 +12,6 @@ function Renderer(canvas) {
     var that = {
         //init вызывается единожды, когда создается система
         init: function (system) {
-            debugger;
             particleSystem = system;
 
             //Передаем системе размеры канвы
@@ -25,7 +24,6 @@ function Renderer(canvas) {
 
         //redraw (перерисовка) вызывается каждый раз, когда изменяется положение частиц в системе (читай, постоянно)
         redraw: function () {
-            debugger;
             //Сначала очищаем canvas
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
@@ -62,7 +60,7 @@ function Renderer(canvas) {
             //Отрисовываем все вершины:
             particleSystem.eachNode(function (node, pt) {
                 //Замеряем ширину текста
-                pt = pt || node._p
+                pt = pt || node._p;
                 var w = ctx.measureText(node.name).width; //ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w); - оригинальный код из демо
                 //Закрашиваем соотв.область белым
                 ctx.clearRect(pt.x - w / 2, pt.y - 7, w, 14);
@@ -214,6 +212,71 @@ function GetSelectedNodes(sys) {
     return selectedElements;
 }
 
+function getById(id, l) {
+    return l.find((e) => e.element_id.toString() === id.toString());
+}
+
+function getParent(id, elements, structure) {
+    let current = getById(id, structure);
+    if (current) {
+        return getById(current.parent_element, elements);
+    }
+}
+
+function getChildren(id, elements, structure) {
+    return structure
+        .filter((e) => e.parent_element.toString() === id.toString())
+        .map((e) => getById(e.element_id, elements));
+}
+
+function getRoot(elements, structure) {
+    return elements.find((e) => !structure.map((s) => s.element_id).includes(e.element_id));
+}
+
+function countCords({ elements, structure }) {
+    let root = getRoot(elements, structure);
+    root.x = 100;
+    root.y = 100;
+    const r = 10;
+    return [root].concat(countChildren(root, elements, structure, r));
+}
+
+function gradToRad(g) {
+    return (Math.PI * g) / 180;
+}
+
+function radToGrad(r) {
+    return (r * 180) / Math.PI;
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function countChildren(el, elements, structure, r, initialRad = 0) {
+    let children = getChildren(el.element_id, elements, structure);
+    let sector = (2 * Math.PI) / (children.length + 1);
+    let counted = children.map((e, i) => {
+        let dest = r;
+        let cs = getChildren(e.element_id, elements, structure);
+        if (cs.length) {
+            dest = r * getRandomArbitrary(3, 7);
+        }
+        centerX = el.x;
+        centerY = el.y;
+
+        let angle = initialRad + sector * (i + 1);
+        e.x = Math.cos(angle) * dest + centerX;
+        e.y = Math.sin(angle) * dest + centerY;
+        e.angle = angle;
+        return e;
+    });
+    counted.forEach((e) => {
+        counted = counted.concat(countChildren(e, elements, structure, r, Math.PI + e.angle));
+    });
+    return counted;
+}
+
 //Корректировка содержимого графа (вершин/ребер) в соответствии с текущим состоянием онтологии
 function CorrectParticleSystemContent(ontology, sys) {
     //Небольшой эксперимент: хочу прикрутить для красоты эту функцию к системе, как метод. Поэтому пишу эту фишечку:
@@ -235,14 +298,17 @@ function CorrectParticleSystemContent(ontology, sys) {
     });
 
     //Затем добавляем то, чего в нем не хватает
+    debugger;
+    ontology.elements = countCords(ontology);
+
     for (var i = 0; i < ontology.elements.length; i++) {
         //Если узла нет
         if (!sys.getNode(ontology.elements[i].element_id)) {
             //Добавляем узел
             //Тут же добавляю инфу об элементе для отображения по альт-клику. Сделал это просто ссылкой, но, может, стоило вручную вписать все св-ва. Пока не знаю
             sys.addNode(ontology.elements[i].element_id, {
-                x: 100,
-                y: 100,
+                x: ontology.elements[i].x,
+                y: ontology.elements[i].y,
                 isSelected: false,
                 areLinksShown: false,
                 element: ontology.elements[i],

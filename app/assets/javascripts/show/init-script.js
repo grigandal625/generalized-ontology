@@ -38,6 +38,7 @@ function DrawOnto(sys, ontology) {
 
     //Определяем отрисовщик
     sys.renderer = Renderer(canvas);
+    sys.parameters({ gravity: true });
 
     //Определяем методы для отображения/скрытия связей. Они описаны здесь, а не в другом скрипте, потому что требуют ссылку на онтологию
     sys.showLinks = function (id) {
@@ -76,6 +77,7 @@ function DrawOnto(sys, ontology) {
     sys.renderer.init(sys);
     sys.correctContent(ontology);
     try {
+        sys.correctParameters();
         sys.renderer.redraw();
     } catch (e) {
         console.error(e);
@@ -122,7 +124,9 @@ function InitButtonHandlers(sys /*, ontology*/) {
             sys.correctContent(ontology);
 
             //Корректируем параметры системы частиц, отвечающие за физику графа
-            setTimeout("sys.correctParameters()", 75);
+            setTimeout(function () {
+                sys.correctParameters();
+            }, 75);
         }
     };
 
@@ -162,7 +166,7 @@ function InitButtonHandlers(sys /*, ontology*/) {
             sys.correctContent(ontology);
 
             //Корректируем параметры системы частиц, отвечающие за физику графа
-            setTimeout("sys.correctParameters()", 75);
+            setTimeout(sys.correctParameters, 75);
             //Почему здесь и далее юзается setTimeout - см. issue на GitHub'е
         }
     };
@@ -213,7 +217,9 @@ function InitButtonHandlers(sys /*, ontology*/) {
             sys.correctContent(ontology);
 
             //Корректируем параметры системы частиц, отвечающие за физику графа
-            setTimeout("sys.correctParameters()", 75);
+            setTimeout(function () {
+                sys.correctParameters();
+            }, 75);
         }
     };
 
@@ -274,7 +280,7 @@ function InitButtonHandlers(sys /*, ontology*/) {
                             sys.correctContent(ontology);
 
                             //Корректируем параметры системы частиц, отвечающие за физику графа
-                            setTimeout("sys.correctParameters()", 75);
+                            setTimeout(sys.correctParameters, 75);
                         }
                         //Если пришли не все онтологии,
                     } else {
@@ -310,7 +316,7 @@ function InitButtonHandlers(sys /*, ontology*/) {
             sys.correctContent(ontology);
 
             //Корректируем параметры системы частиц, отвечающие за физику графа
-            setTimeout("sys.correctParameters()", 75);
+            setTimeout(sys.correctParameters, 75);
         } else {
             //В противном случае можно кинуть alert,
             //а по-хорошему, надо бы замутить какой-нибудь дизейблер для кнопки "Отменить"
