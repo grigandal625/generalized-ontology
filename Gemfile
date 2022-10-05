@@ -44,3 +44,4 @@ gem  'arbor-rails'
 
 gem 'composite_primary_keys'
 gem 'bigdecimal', '1.3.5'
+gem 'rails-erd', group: :development
